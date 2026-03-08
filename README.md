@@ -1,37 +1,44 @@
-# Pytoget
+# Simpy 🐱‍💻
 
-## A Simple Python Script to Get the System's Data
+## A Simple Python Script inspired by neofetch and fastfetch
 
-**Pytoget** is a simple Python script that displays your system's specifications, such as CPU, GPU, RAM, and storage.
+**Simpy** is a lightweight Python script that displays your system’s specifications, including CPU, GPU, RAM, storage, network, battery, Python version, and uptime with a fun ASCII art cat!  
 
 ---
 
 ## What It Does
 
-It utilizes Python's built-in modules such as **os**, **platform**, and **subprocess** to gather data about the device's specifications.
+It uses Python modules such as **psutil**, **platform**, **shutil**, **cpuinfo**, and **GPUtil** to gather and display your system information in a clean, readable format.
 
----
+**Features include:**  
 
-## Built-in Commands
-
-| Command                 | Action                                      |
-|-------------------------|---------------------------------------------|
-| `q`, `quit`, or `exit`   | Terminates the program                      |
-| `pytoget` or `ptg`       | Reruns the program                          |
-| `pytoget -v` or `ptg -v` | Displays the script's version               |
-| `cls`                    | Clears the entire console/terminal          |
-| `cpu`                    | Shows detailed CPU specifications           |
-| `gpu`                    | Shows detailed GPU specifications           |
-| `rom`                    | Shows storage specifications                |
-| `ram`                    | Shows detailed memory specifications        |
+- CPU brand, cores, and usage  
+- GPU info (if available)  
+- RAM usage and disk storage  
+- Active network interfaces  
+- Battery percentage (if present)  
+- Python version and system uptime  
+- Cute ASCII art display  
 
 ---
 
 ## How to Use It
 
-1. Make sure **Python** is installed on your device.
-2. Download the `.py` file and save it to your local machine.
-3. Run the file (wait a few seconds for the system information to load).
+1. Make sure **Python 3.6+** is installed on your device.  
+2. Install required packages via pip:
+
+```bash
+pip install py-cpuinfo GPUtil psutil
+```
+
+3. Download the `simpy.py` file and save it locally.
+4. Run the script:
+
+```bash
+python simpy.py
+```
+
+5. Wait a few seconds for the system information to load.
 
 ---
 
@@ -43,8 +50,13 @@ It utilizes Python's built-in modules such as **os**, **platform**, and **subpro
 
 ## Notes
 
-This is a hobby project, and I am still working on improving and expanding it.
+This is a hobby project and is still being improved. You can customize:
+- The `asciimoji` list for different ASCII art
+- The storage path in `get_storage(path='C:\\')`
+- Tinker on it
 
 ---
 
 ## Thank You!
+
+Enjoy checking your system specs with a fun and simple Python script! 😸
