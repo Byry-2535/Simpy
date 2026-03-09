@@ -50,7 +50,8 @@ python simpy.py
 
 ## Notes
 
-This is a hobby project and is still being improved. You can customize:
+For `windows` system currently. This is a hobby project and is still being improved. You can customize:
+
 - The `asciimoji` list for different ASCII art
 - The storage path in `get_storage(path='C:\\')`
 - Tinker on it

@@ -38,7 +38,7 @@ def get_cpu_cores():
 
 def get_cpu_usage():
     usage = psutil.cpu_percent(interval=0.5)
-    return f'CPU Usage: {usage}%'
+    return f'{usage}%'
 
 def get_gpu_specs():
     gpu = GPUtil.getGPUs()
@@ -91,9 +91,8 @@ def main():
         '',
         f'Username: {username}',
         f'OS: {os_name} {win_ver}',
-        get_cpu_specs(),
+        f'{get_cpu_specs()} ({get_cpu_usage()})',
         get_cpu_cores(),
-        get_cpu_usage(),
         get_gpu_specs(),
         get_storage(),
         get_ram(),
