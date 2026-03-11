@@ -1,6 +1,6 @@
 # Simpy 🐱‍💻
 
-## A Simple Python Script inspired by neofetch and fastfetch
+## A Simple Python Script inspired by neofetch and fastfetch for Windows
 
 **Simpy** is a lightweight Python script that displays your system’s specifications, including CPU, GPU, RAM, storage, network, battery, Python version, and uptime with a fun ASCII art cat!  
 
@@ -8,12 +8,12 @@
 
 ## What It Does
 
-It uses Python modules such as **psutil**, **platform**, **shutil**, **cpuinfo**, and **GPUtil** to gather and display your system information in a clean, readable format.
+It uses Python modules such as **psutil**, **platform**, **shutil**, and **wmi** to gather and display your system information in a clean, readable format.
 
 **Features include:**  
 
-- CPU brand, cores, and usage  
-- GPU info (if available)  
+- CPU specs
+- GPU specs
 - RAM usage and disk storage  
 - Active network interfaces  
 - Battery percentage (if present)  
@@ -24,37 +24,20 @@ It uses Python modules such as **psutil**, **platform**, **shutil**, **cpuinfo**
 
 ## How to Use It
 
-1. Make sure **Python 3.6+** is installed on your device.  
-2. Install required packages via pip:
-
-```bash
-pip install py-cpuinfo GPUtil psutil
-```
-
-3. Download the `simpy.py` file and save it locally.
-4. Run the script:
-
-```bash
-python simpy.py
-```
-
-5. Wait a few seconds for the system information to load.
+1. You can just download the `simpy.exe` file
+2. Double click to run the script
 
 ---
 
 ## Sample Output
 
-![My Laptop Specs](./images/sample.png)
+![My Laptop Specs](meow.png)
 
 ---
 
 ## Notes
 
-For `windows` system currently. This is a hobby project and is still being improved. You can customize:
-
-- The `asciimoji` list for different ASCII art
-- The storage path in `get_storage(path='C:\\')`
-- Tinker on it
+For `windows` system currently. This is a hobby project and is still being improved.
 
 ---
 

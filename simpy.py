@@ -1,9 +1,11 @@
-import cpuinfo
-import GPUtil
+import getpass
 import platform
 import psutil
 import shutil
 import time
+import wmi
+
+c = wmi.WMI()
 
 asciimoji = [
 "         ",
@@ -20,31 +22,52 @@ def get_os_name():
 def get_win_ver():
     return platform.release()
 
+def get_arch():
+    return f'Architecture: {platform.machine()}'
+
+def get_device_type():
+    try:
+        for enclosure in c.Win32_SystemEnclosure():
+            chassis = enclosure.ChassisTypes
+            laptop_types = [8, 9, 10, 14]
+            if any(t in chassis for t in laptop_types):
+                return 'Device: Laptop'
+        return 'Device: Desktop'
+    except:
+        return 'Device: Unknown'
+
 def get_username():
-    return platform.node()
+    return getpass.getuser()
 
 def dash_lines():
     lines = len(get_os_name()) + len(get_username()) + 4
     return '-' * lines
 
 def get_cpu_specs():
-    cpu = cpuinfo.get_cpu_info()['brand_raw']
-    return f'CPU: {cpu}'
+    try:
+        cpu = c.Win32_Processor()[0]
+        name = cpu.Name.strip()
+        return f'CPU: {name}'
+    except:
+        return 'CPU: Unknown'
+
+def get_cpu_usage():
+    usage = psutil.cpu_percent(interval=None)
+    return f'{usage}%'
 
 def get_cpu_cores():
     physical = psutil.cpu_count(logical=False)
     logical = psutil.cpu_count(logical=True)
-    return f'Cores: {physical}C/{logical}T'
-
-def get_cpu_usage():
-    usage = psutil.cpu_percent(interval=0.5)
-    return f'{usage}%'
+    return f'Cores/Threads: {physical}C/{logical}T'
 
 def get_gpu_specs():
-    gpu = GPUtil.getGPUs()
-    if gpu:
-        return f'GPU: {gpu[0].name}'
-    return 'GPU: Unknown'
+    try:
+        gpus = c.Win32_VideoController()
+        if gpus:
+            return f'GPU: {gpus[0].Name.strip()}'
+        return 'GPU: Unknown'
+    except:
+        return 'GPU: Unknown'
 
 def get_storage(path='C:\\'):
     usage = shutil.disk_usage(path)
@@ -72,13 +95,14 @@ def get_battery():
     return 'Battery: Not Present'
 
 def get_py_ver():
-    return f'Python Version: {platform.python_version()}'
+    return f'Python: {platform.python_implementation()} {platform.python_version()}'
 
 def get_uptime():
-    uptime_seconds = time.time() - psutil.boot_time()
-    h, rem = divmod(int(uptime_seconds), 3600)
+    uptime_seconds = int(time.time() - psutil.boot_time())
+    h, rem = divmod(uptime_seconds, 3600)
     m, s = divmod(rem, 60)
-    return f'Uptime: {h}:{m}:{s}'
+
+    return f'Uptime: {h}h {m}m {s}s'
 
 def main():
     username = get_username()
@@ -91,6 +115,8 @@ def main():
         '',
         f'Username: {username}',
         f'OS: {os_name} {win_ver}',
+        get_arch(),
+        get_device_type(),
         f'{get_cpu_specs()} ({get_cpu_usage()})',
         get_cpu_cores(),
         get_gpu_specs(),
@@ -108,8 +134,9 @@ def main():
         left = asciimoji[i] if i < len(asciimoji) else ' ' * 9
         right = info[i] if i < len(info) else ''
         print(f"{left}  {right}")
+        
+    input('\nPress any key to exit...')
 
 if __name__ == '__main__':
     print()
     main()
-    print()
