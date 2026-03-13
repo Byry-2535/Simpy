@@ -1,31 +1,30 @@
-# Simpy 🐱‍💻
+# 🐱‍💻 Simpy — Your Fun System Info Cat
 
 ## A Simple Python Script inspired by neofetch and fastfetch for Windows
 
-**Simpy** is a lightweight Python script that displays your system’s specifications, including CPU, GPU, RAM, storage, network, battery, Python version, and uptime with a fun ASCII art cat!  
+**Simpy** is a lightweight Python script that fetches your Windows system info in style—CPU, GPU, RAM, storage, network, battery, Python version, and uptime—while displaying a cute ASCII cat. 😸 
 
 ---
 
-## What It Does
+## 🌟 Features
 
-It uses Python modules such as **psutil**, **platform**, **shutil**, and **wmi** to gather and display your system information in a clean, readable format.
-
-**Features include:**  
-
-- CPU specs
-- GPU specs
-- RAM usage and disk storage  
-- Active network interfaces  
-- Battery percentage (if present)  
-- Python version and system uptime  
-- Cute ASCII art display  
+✨ **What Simpy Shows:**
+- 🖥️ CPU specs & real-time usage
+- 🎮 GPU details
+- 💾 RAM & disk storage usage
+- 🌐 Active network interfaces
+- 🔋 Battery status (if present)
+- 🐍 Python implementation & version
+- ⏱️ System uptime
+- 🐾 Cute ASCII cat for extra charm 
 
 ---
 
-## How to Use It
+## 🚀 How to Run
 
-1. You can just download the `simpy.exe` file
-2. Double click to run the script
+1. Download the script or `simpy.exe`.
+2. Double-click to run.
+3. Watch your system info appear with a friendly cat! 🐱
 
 ---
 
@@ -36,12 +35,15 @@ It uses Python modules such as **psutil**, **platform**, **shutil**, and **wmi**
 
 ---
 
-## Notes
+## 📝 Notes
 
-For **windows** system currently. This is a hobby project and is still being improved.
+- Windows-only (uses wmi for hardware info).
+- Hobby project—improvements and contributions are welcome!
+- Requires Python 3.6+ and modules: psutil, wmi, shutil, platform.
 
 ---
 
-## Thank You!
+## 🙏 Thank You!
 
-Enjoy checking your system specs with a fun and simple Python script! 😸
+Simpy makes checking your system fun and cute 😺.
+Enjoy your specs with style and maybe show it off to friends!
