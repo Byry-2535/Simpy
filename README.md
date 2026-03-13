@@ -31,13 +31,14 @@ It uses Python modules such as **psutil**, **platform**, **shutil**, and **wmi**
 
 ## Sample Output
 
-![My Laptop Specs](meow.png)
+![Byry](meow.png)
+![TNC](tnc.jpg)
 
 ---
 
 ## Notes
 
-For `windows` system currently. This is a hobby project and is still being improved.
+For **windows** system currently. This is a hobby project and is still being improved.
 
 ---
 
