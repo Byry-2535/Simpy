@@ -31,7 +31,9 @@
 ## Sample Output
 
 ![Sample 1](./images/sample%201.png)
+---
 ![Sample 2](./images/sample%202.png)
+---
 ![Sample 3](./images/sample%203.png)
 
 ---
