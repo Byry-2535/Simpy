@@ -7,6 +7,7 @@ import wmi
 from plyer import notification
 
 c = wmi.WMI()
+
 asciimoji = [
 "         ",
 "         ",
@@ -105,7 +106,7 @@ def get_uptime():
     return f'Uptime: {h}h {m}m {s}s'
 
 def ty_notif(username):
-    return notification.notify(title=f'Thank You {username}!', message='for using my simple script.', timeout=5)
+    return notification.notify(title=f'Thank You {username}!', message='for using my simple script.', timeout=1)
 
 def main():
     username = get_username()
