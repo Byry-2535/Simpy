@@ -4,9 +4,9 @@ import psutil
 import shutil
 import time
 import wmi
+from plyer import notification
 
 c = wmi.WMI()
-
 asciimoji = [
 "         ",
 "         ",
@@ -104,6 +104,9 @@ def get_uptime():
 
     return f'Uptime: {h}h {m}m {s}s'
 
+def ty_notif(username):
+    return notification.notify(title=f'Thank You {username}!', message='for using my simple script.', timeout=5)
+
 def main():
     username = get_username()
     os_name = get_os_name()
@@ -140,3 +143,4 @@ def main():
 if __name__ == '__main__':
     print()
     main()
+    ty_notif(get_username())
