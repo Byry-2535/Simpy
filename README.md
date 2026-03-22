@@ -42,7 +42,6 @@
 
 - Windows-only (uses wmi for hardware info).
 - Hobby project—improvements and contributions are welcome!
-- Requires Python 3.6+ and modules: psutil, wmi, shutil, platform.
 
 ---
 
